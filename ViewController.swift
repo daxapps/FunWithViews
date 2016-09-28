@@ -27,22 +27,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- //       view1.isHidden = true
-//        view2.isHidden = true
-//        view3.isHidden = true
-//        view4.isHidden = true
-//        view5.isHidden = true
-//        view6.isHidden = true
- //       view7.isHidden = true
-//        
-//        result1.isHidden = true
-//        result2.isHidden = true
-//        result3.isHidden = true
-//        result4.isHidden = true
-//        result5.isHidden = true
-//        result6.isHidden = true
-        
-        
     }
     
     @IBAction func dieButtonTapped(_ sender: AnyObject) {
@@ -51,22 +35,63 @@ class ViewController: UIViewController {
         func randomDiceRoll() -> Int {
             return Int(arc4random_uniform(6) + 1)
         }
-        print(randomDiceRoll())
+        var diceRoll = randomDiceRoll()
+        print(diceRoll)
         
-        
-            if randomDiceRoll() == 1 {
-                view4.isHidden = false
-                result1.isHidden = false
-                result1.text = "1"
-            } else if randomDiceRoll() == 2 {
-                view1.isHidden = false
-                view7.isHidden = false
-            }
-        
+        if diceRoll == 1 {
+            view1.isHidden = true
+            view2.isHidden = true
+            view3.isHidden = true
+            view4.isHidden = false
+            view5.isHidden = true
+            view6.isHidden = true
+            view7.isHidden = true
+        } else if diceRoll == 2 {
+            view1.isHidden = false
+            view2.isHidden = true
+            view3.isHidden = true
+            view4.isHidden = true
+            view5.isHidden = true
+            view6.isHidden = true
+            view7.isHidden = false
+        } else if diceRoll == 3 {
+            view1.isHidden = false
+            view4.isHidden = false
+            view7.isHidden = false
+            view2.isHidden = true
+            view3.isHidden = true
+            view5.isHidden = true
+            view6.isHidden = true
+        } else if diceRoll == 4 {
+            view1.isHidden = false
+            view3.isHidden = false
+            view5.isHidden = false
+            view7.isHidden = false
+            view2.isHidden = true
+            view4.isHidden = true
+            view6.isHidden = true
+        } else if diceRoll == 5 {
+            view1.isHidden = false
+            view2.isHidden = true
+            view3.isHidden = false
+            view4.isHidden = false
+            view5.isHidden = false
+            view6.isHidden = true
+            view7.isHidden = false
+            
+        } else {
+            view1.isHidden = false
+            view2.isHidden = false
+            view3.isHidden = false
+            view4.isHidden = true
+            view5.isHidden = false
+            view6.isHidden = false
+            view7.isHidden = false
+        }
         
         func updateLabelWithRoll(roll: Int) {
-            let roll = randomDiceRoll()
             let diceScore = String(roll)
+            
             if result1.isHidden {
                 result1.text = diceScore
                 result1.isHidden = false
@@ -87,8 +112,7 @@ class ViewController: UIViewController {
                 result6.isHidden = false
             }
         }
-        
+        updateLabelWithRoll(roll: diceRoll)
     }
-    
     
 }
