@@ -38,7 +38,58 @@ class ViewController: UIViewController {
         var diceRoll = randomDiceRoll()
         print(diceRoll)
         
-        if diceRoll == 1 {
+//        if diceRoll == 1 {
+//            view1.isHidden = true
+//            view2.isHidden = true
+//            view3.isHidden = true
+//            view4.isHidden = false
+//            view5.isHidden = true
+//            view6.isHidden = true
+//            view7.isHidden = true
+//        } else if diceRoll == 2 {
+//            view1.isHidden = false
+//            view2.isHidden = true
+//            view3.isHidden = true
+//            view4.isHidden = true
+//            view5.isHidden = true
+//            view6.isHidden = true
+//            view7.isHidden = false
+//        } else if diceRoll == 3 {
+//            view1.isHidden = false
+//            view4.isHidden = false
+//            view7.isHidden = false
+//            view2.isHidden = true
+//            view3.isHidden = true
+//            view5.isHidden = true
+//            view6.isHidden = true
+//        } else if diceRoll == 4 {
+//            view1.isHidden = false
+//            view3.isHidden = false
+//            view5.isHidden = false
+//            view7.isHidden = false
+//            view2.isHidden = true
+//            view4.isHidden = true
+//            view6.isHidden = true
+//        } else if diceRoll == 5 {
+//            view1.isHidden = false
+//            view2.isHidden = true
+//            view3.isHidden = false
+//            view4.isHidden = false
+//            view5.isHidden = false
+//            view6.isHidden = true
+//            view7.isHidden = false
+//        } else {
+//            view1.isHidden = false
+//            view2.isHidden = false
+//            view3.isHidden = false
+//            view4.isHidden = true
+//            view5.isHidden = false
+//            view6.isHidden = false
+//            view7.isHidden = false
+//        }
+
+        switch diceRoll {
+        case 1:
             view1.isHidden = true
             view2.isHidden = true
             view3.isHidden = true
@@ -46,7 +97,7 @@ class ViewController: UIViewController {
             view5.isHidden = true
             view6.isHidden = true
             view7.isHidden = true
-        } else if diceRoll == 2 {
+        case 2:
             view1.isHidden = false
             view2.isHidden = true
             view3.isHidden = true
@@ -54,7 +105,7 @@ class ViewController: UIViewController {
             view5.isHidden = true
             view6.isHidden = true
             view7.isHidden = false
-        } else if diceRoll == 3 {
+        case 3:
             view1.isHidden = false
             view4.isHidden = false
             view7.isHidden = false
@@ -62,7 +113,7 @@ class ViewController: UIViewController {
             view3.isHidden = true
             view5.isHidden = true
             view6.isHidden = true
-        } else if diceRoll == 4 {
+        case 4:
             view1.isHidden = false
             view3.isHidden = false
             view5.isHidden = false
@@ -70,7 +121,7 @@ class ViewController: UIViewController {
             view2.isHidden = true
             view4.isHidden = true
             view6.isHidden = true
-        } else if diceRoll == 5 {
+        case 5:
             view1.isHidden = false
             view2.isHidden = true
             view3.isHidden = false
@@ -78,8 +129,7 @@ class ViewController: UIViewController {
             view5.isHidden = false
             view6.isHidden = true
             view7.isHidden = false
-            
-        } else {
+        default:
             view1.isHidden = false
             view2.isHidden = false
             view3.isHidden = false
@@ -87,8 +137,9 @@ class ViewController: UIViewController {
             view5.isHidden = false
             view6.isHidden = false
             view7.isHidden = false
+    
         }
-        
+    
         func updateLabelWithRoll(roll: Int) {
             let diceScore = String(roll)
             
